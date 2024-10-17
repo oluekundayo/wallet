@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+.form-control:focus, .btn:focus {
+  // border: initial;
+  box-shadow: none;
+  // background-color: transparent;
+  resize: none;
+  outline: 0;
+}
+
+/* Load Spinner  */
+
+.lds-spinner {
+  display: flex;
+  justify-content: center;
+}
+
+.lds-spinner--center {
+  align-items: center !important;
+}
+
+.lds-spinner::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid #dddddd;
+  border-top-color: #30323e00;
+  border-bottom-color: #30323e00;
+  border-radius: 50%;
+  animation: lds-spinner 1s ease infinite;
+}
+
+@keyframes lds-spinner {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* End Load Spinner */
+
+
+

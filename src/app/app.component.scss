@@ -1,0 +1,155 @@
+.logo {
+  width: 120px;
+  height: 80px;
+}
+.nav-item a {
+  width: 100px;
+  font-size: 20px;
+  // color: #5878bc;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+}
+
+.container .fAmUdU {
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.container .fAmUdU {
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.container section .wallet-grid {
+  width: 100%;
+  /* height: 100%; */
+  padding: 24px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background: #fff;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  // grid-column-gap: 30px;
+  // grid-row-gap: 30px;
+}
+
+.wallet-grid .text-center {
+  cursor: pointer;
+  color: #4199fc
+}
+
+.rimg {
+  width: 7rem;
+}
+
+// modal popup
+.popup {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.4s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: rbg(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.popup-lunch {
+  display: block;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popup-inner {
+  background-color: #fff;
+  padding: 32px 16px;
+  max-width: 768px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 12px rgb(0, 0, 0, 0.2);
+}
+
+.popup-body {
+  width: 30vw;
+  /* height: 30vh; */
+}
+
+@media only screen and (max-width: 768px) {
+  .popup-body {
+    width: 100%;
+  }
+}
+// End modal popup
+
+.nav-pills {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  border-radius: 0px;
+  color: #411616;
+}
+.under:hover {
+  border-bottom: 1px solid #000;
+}
+.nav-link.active {
+  background: transparent !important;
+  color: #999999;
+}
+
+.wallet-app-name-send {
+  font-size: 18px;
+  font-weight: bolder;
+  // color: #587087;
+}
+.asdda {
+  color: #000000a4;
+}
+
+.asads {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+
+footer {
+  // width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+footer .Footer__SExternalLink-sc-1k47aoh-2 {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+footer .Footer__SExternalLink-sc-1k47aoh-2:hover {
+  text-decoration: underline;
+}
+
+footer .Footer__SExternalLink-sc-1k47aoh-2 p {
+  cursor: pointer;
+  color: #587087;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 14px;
+}

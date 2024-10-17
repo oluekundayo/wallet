@@ -1,0 +1,32 @@
+.bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.call__position {
+  display: block;
+  width: 100%;
+}
+
+.call__button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+
+  .content {
+    text-align: center;
+    h3 {
+      font-size: 50px;
+    }
+
+    p {
+      font-size: 30px;
+    }
+  }
+}
+
